@@ -1,0 +1,18 @@
+{
+    "dir": "ltr",
+    "lang": "Russian",
+    "name": "Random",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "https://random.timkovik.now.sh/",
+    "short_name": "Random",
+    "theme_color": "transparent",
+    "description": "",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": "",
+    "prefer_related_applications": "false",
+    "icons": [],
+    "screenshots": [],
+    "generated": "true"
+}

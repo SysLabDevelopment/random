@@ -32,7 +32,9 @@ class Home extends React.Component {
     return (
       <div>
         <Head>
+          <script src='/pwa-worker.js'></script>
           <title>Random</title>
+          <link rel="manifest" href="manifest.json"></link>
         </Head>
 
         <form onSubmit={this.handleSubmit}>
@@ -44,6 +46,8 @@ class Home extends React.Component {
 
         <style jsx>{``}</style>
       </div>
+
+      // <script src="/manup.js"></script>
     );
   }
 }
