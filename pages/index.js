@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { randomInteger } from "../core";
+import "../node_modules/@clr/ui/clr-ui.min.css";
 
 class Home extends React.Component {
   state = {
@@ -30,20 +31,47 @@ class Home extends React.Component {
     const { from, to, output } = this.state;
 
     return (
-      <div>
+      <main>
         <Head>
           <title>Random</title>
         </Head>
-
-        <form onSubmit={this.handleSubmit}>
-          <input type="number" onChange={this.handleFrom} value={from} />
-          <input type="number" onChange={this.handleTo} value={to} />
-          <button>Рандомь!</button>
-          <output>{output}</output>
-        </form>
-
-        <style jsx>{``}</style>
-      </div>
+        <div className="card">
+          <div className="card-block">
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="number"
+                onChange={this.handleFrom}
+                value={from}
+                className="clr-input"
+              />
+              <input
+                type="number"
+                onChange={this.handleTo}
+                value={to}
+                className="clr-input"
+              />
+              <button>Рандомь!</button>
+              <output>{output}</output>
+            </form>
+          </div>
+        </div>
+        <style jsx>{`
+          main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: max-content;
+            margin: 0 auto;
+          }
+          form {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+          }
+        `}</style>
+      </main>
     );
   }
 }
