@@ -5,9 +5,9 @@ import "../node_modules/@clr/ui/clr-ui.min.css";
 
 class Home extends React.Component {
   state = {
-    from: 0,
+    from: 1,
     to: 10,
-    output: null
+    output: "*"
   };
 
   handleSubmit = e => {
@@ -27,6 +27,11 @@ class Home extends React.Component {
     this.setState({ to: e.target.value });
   };
 
+  selectText = e => {
+    e.preventDefault();
+    e.target.select();
+  };
+
   render() {
     const { from, to, output } = this.state;
 
@@ -40,21 +45,29 @@ class Home extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <input
                 type="number"
-                onChange={this.handleFrom}
-                value={from}
                 className="clr-input"
+                value={from}
+                onChange={this.handleFrom}
+                onFocus={this.selectText}
               />
               <input
                 type="number"
-                onChange={this.handleTo}
-                value={to}
                 className="clr-input"
+                value={to}
+                onChange={this.handleTo}
+                onFocus={this.selectText}
+                autoFocus
               />
-              <button>Рандомь!</button>
-              <output>{output}</output>
+              <button className="btn btn-primary btn-block">Рандомь!</button>
+              <output className="label label-success">{output}</output>
             </form>
           </div>
         </div>
+        <style global jsx>{`
+          :root {
+            font-size: 48px;
+          }
+        `}</style>
         <style jsx>{`
           main {
             display: flex;
@@ -69,6 +82,13 @@ class Home extends React.Component {
             align-items: center;
             justify-content: space-evenly;
             flex-direction: column;
+            height: calc(100vh - 24px * 6);
+          }
+          .card {
+            margin: 0;
+          }
+          button {
+            margin: 0 !important;
           }
         `}</style>
       </main>
