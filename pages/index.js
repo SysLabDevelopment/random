@@ -95,7 +95,7 @@ class Home extends React.Component {
                     button {
                         margin: 0 !important;
                     }
-                    @media (min-width: 320px) {
+                    @media (max-width: 320px) {
                         main {
                             width: auto !important;
                         }
