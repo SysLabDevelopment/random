@@ -25,3 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
+/public/service-worker.js
+/public/service-worker.js.map

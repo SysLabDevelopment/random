@@ -4,11 +4,11 @@ const withPlugins = require('next-compose-plugins');
 
 const nextConfig = {
     // devSwSrc: './public/service-worker.js',
-    // generateSw: false,
+    // generateSw: true,
     generateInDevMode: true,
-    swDest: 'service-worker.js',
     transformManifest: manifest => ['/'].concat(manifest), // add the homepage to the cache
     workboxOpts: {
+        swDest: '../public/service-worker.js',
         runtimeCaching: [
             {
                 urlPattern: /^https?.*/,
