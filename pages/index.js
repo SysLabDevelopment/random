@@ -57,7 +57,12 @@ class Home extends React.Component {
                                 onChange={this.handleTo}
                                 onFocus={this.selectText}
                                 autoFocus
+                                list='defaultNumbers'
                             />
+                            <datalist id='defaultNumbers'>
+                                <option value='2' />
+                                <option value='10' />
+                            </datalist>
                             <button className='btn btn-primary btn-block'>Рандомь!</button>
                             <output className='label label-success'>{output}</output>
                         </form>
