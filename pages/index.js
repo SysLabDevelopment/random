@@ -14,7 +14,7 @@ class Home extends React.Component {
         e.preventDefault();
 
         const { from, to } = this.state;
-        this.setState({ output: randomInteger(from, to) });
+        this.setState({ output: randomInteger(parseInt(from), parseInt(to)) });
     };
 
     handleFrom = e => {
