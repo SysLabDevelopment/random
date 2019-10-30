@@ -14,7 +14,7 @@ class Home extends React.Component {
         e.preventDefault();
 
         const { from, to } = this.state;
-        this.setState({ output: randomInteger(from, to) });
+        this.setState({ output: randomInteger(parseInt(from), parseInt(to)) });
     };
 
     handleFrom = e => {
@@ -57,7 +57,12 @@ class Home extends React.Component {
                                 onChange={this.handleTo}
                                 onFocus={this.selectText}
                                 autoFocus
+                                list='defaultNumbers'
                             />
+                            <datalist id='defaultNumbers'>
+                                <option value='2' />
+                                <option value='10' />
+                            </datalist>
                             <button className='btn btn-primary btn-block'>Рандомь!</button>
                             <output className='label label-success'>{output}</output>
                         </form>
