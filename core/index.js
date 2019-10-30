@@ -6,7 +6,7 @@
  * @returns {number}
  */
 export function randomInteger(min, max) {
-  return Math.round(min - 0.5 + Math.random() * (max - min + 1));
+    return Math.round(min - 0.5 + Math.random() * (max - min + 1));
 }
 
 /**
@@ -23,7 +23,7 @@ export const randomReal = randomInteger.bind(null, 1);
  * @returns рандомный элемент массива
  */
 Array.prototype.random = function() {
-  return this[randomInteger(0, this.length - 1)];
+    return this[randomInteger(0, this.length - 1)];
 };
 
 /**

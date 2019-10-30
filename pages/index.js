@@ -1,99 +1,99 @@
-import React from "react";
-import Head from "next/head";
-import { randomInteger } from "../core";
-import "../node_modules/@clr/ui/clr-ui.min.css";
+import React from 'react';
+import Head from 'next/head';
+import { randomInteger } from '../core';
+import '../node_modules/@clr/ui/clr-ui.min.css';
 
 class Home extends React.Component {
-  state = {
-    from: 1,
-    to: 10,
-    output: "*"
-  };
+    state = {
+        from: 1,
+        to: 10,
+        output: '*',
+    };
 
-  handleSubmit = e => {
-    e.preventDefault();
+    handleSubmit = e => {
+        e.preventDefault();
 
-    const { from, to } = this.state;
-    this.setState({ output: randomInteger(from, to) });
-  };
+        const { from, to } = this.state;
+        this.setState({ output: randomInteger(from, to) });
+    };
 
-  handleFrom = e => {
-    e.preventDefault();
-    this.setState({ from: e.target.value });
-  };
+    handleFrom = e => {
+        e.preventDefault();
+        this.setState({ from: e.target.value });
+    };
 
-  handleTo = e => {
-    e.preventDefault();
-    this.setState({ to: e.target.value });
-  };
+    handleTo = e => {
+        e.preventDefault();
+        this.setState({ to: e.target.value });
+    };
 
-  selectText = e => {
-    e.preventDefault();
-    e.target.select();
-  };
+    selectText = e => {
+        e.preventDefault();
+        e.target.select();
+    };
 
-  render() {
-    const { from, to, output } = this.state;
+    render() {
+        const { from, to, output } = this.state;
 
-    return (
-      <main>
-        <Head>
-          <title>Random</title>
-        </Head>
-        <div className="card">
-          <div className="card-block">
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="number"
-                className="clr-input"
-                value={from}
-                onChange={this.handleFrom}
-                onFocus={this.selectText}
-              />
-              <input
-                type="number"
-                className="clr-input"
-                value={to}
-                onChange={this.handleTo}
-                onFocus={this.selectText}
-                autoFocus
-              />
-              <button className="btn btn-primary btn-block">Рандомь!</button>
-              <output className="label label-success">{output}</output>
-            </form>
-          </div>
-        </div>
-        <style global jsx>{`
-          :root {
-            font-size: 48px;
-          }
-        `}</style>
-        <style jsx>{`
-          main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: max-content;
-            margin: 0 auto;
-          }
-          form {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-            height: calc(100vh - 24px * 6);
-          }
-          .card {
-            margin: 0;
-          }
-          button {
-            margin: 0 !important;
-          }
-        `}</style>
-      </main>
-    );
-  }
+        return (
+            <main>
+                <Head>
+                    <title>Random</title>
+                </Head>
+                <div className='card'>
+                    <div className='card-block'>
+                        <form onSubmit={this.handleSubmit}>
+                            <input
+                                type='number'
+                                className='clr-input'
+                                value={from}
+                                onChange={this.handleFrom}
+                                onFocus={this.selectText}
+                            />
+                            <input
+                                type='number'
+                                className='clr-input'
+                                value={to}
+                                onChange={this.handleTo}
+                                onFocus={this.selectText}
+                                autoFocus
+                            />
+                            <button className='btn btn-primary btn-block'>Рандомь!</button>
+                            <output className='label label-success'>{output}</output>
+                        </form>
+                    </div>
+                </div>
+                <style global jsx>{`
+                    :root {
+                        font-size: 48px;
+                    }
+                `}</style>
+                <style jsx>{`
+                    main {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100vh;
+                        width: max-content;
+                        margin: 0 auto;
+                    }
+                    form {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        flex-direction: column;
+                        height: calc(100vh - 24px * 6);
+                    }
+                    .card {
+                        margin: 0;
+                    }
+                    button {
+                        margin: 0 !important;
+                    }
+                `}</style>
+            </main>
+        );
+    }
 }
 
 export default Home;
