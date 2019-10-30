@@ -95,6 +95,14 @@ class Home extends React.Component {
                     button {
                         margin: 0 !important;
                     }
+                    @media (max-width: 320px) {
+                        main {
+                            width: auto !important;
+                        }
+                        form > input {
+                            max-width: 100% !important;
+                        }
+                    }
                 `}</style>
             </main>
         );
