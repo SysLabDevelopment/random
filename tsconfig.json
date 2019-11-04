@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "allowJs": true,
+        "jsx": "react",
+        "strict": true,
+        "moduleResolution": "node",
+        // "lib": ["dom", "es5", "scripthost", "es2015.promise", "esnext"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "rootDir": "./src",
+        "baseUrl": "src",
+        "outDir": "./dist/",
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "plugins": [{ "transform": "typescript-plugin-styled-components" }],
+        "importHelpers": true,
+        "incremental": true,
+        "locale": "ru",
+        "newLine": "LF",
+        "noEmitOnError": false,
+        "noErrorTruncation": false,
+        "removeComments": true,
+        "tsBuildInfoFile": "./buildcache",
+        "sourceMap": true
+    },
+    "include": ["src"]
+}
